@@ -90,6 +90,9 @@
 	if(!ishuman(C))
 		return
 
+	if(HAS_TRAIT(C, TRAIT_FILTERED_BREATH))
+		return
+
 	var/mob/living/carbon/human/H = C
 	H.emote_cough()
 	if(prob(5))

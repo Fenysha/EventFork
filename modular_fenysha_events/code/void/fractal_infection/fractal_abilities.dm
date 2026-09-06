@@ -58,6 +58,8 @@
 		"amplitude gain" = 60,
 		// Small blast, so give the ring long enough to actually be seen.
 		"min duration ds" = 6,
+	), list(
+		"deaf ticks" = 0,
 	))
 
 /// The projectile subtype already aims and fires; only the projectile is ours.
@@ -72,7 +74,8 @@
 
 	projectile_type = /obj/projectile/beam/laser/hitscan/fractal_lance
 	range = 12
-	recharge_time = 12 SECONDS
+	// Long on purpose: it keeps its stun, so the cost of that is the wait.
+	recharge_time = 45 SECONDS
 	chargetime = 0
 	releasedrain = 20
 	chargedrain = 0
@@ -134,6 +137,8 @@
 	shockwave(landing, blast_radius, blast_power, blast_speed, FALSE, user, 0, list(
 		"amplitude base" = 70,
 		"amplitude gain" = 70,
+	), list(
+		"deaf ticks" = 0,
 	))
 	return TRUE
 
